@@ -191,7 +191,7 @@ class MMTune
 
     results = scan_over_freq(916.55, 916.75, 10)
     if results[0][1] > 0
-      if results[0][2] < -85
+      if results[0][2] < -87
         abort("Response on best freq of #{results[0][0]} is too weak: #{results[0][2]}")
       else
         STDERR.puts "Setting to best freq of #{results[0][0]} (rssi: #{results[0][2]})"
