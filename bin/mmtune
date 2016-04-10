@@ -46,7 +46,7 @@ class MMTune
     3.times do
       @rf.send_packet("a7" + @pump_serial + "8d00", @tx_channel)
       packet = @rf.get_packet(@rx_channel, 80)
-      if packet
+      if packet && packet.valid?
         print_packet(packet)
         unless packet.to_s =~ /GetModel/
            abort("Invalid response: expected GetModel")
